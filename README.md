@@ -1,6 +1,6 @@
 # pg-core
 
-PostgreSQL Core Driver.
+PostgreSQL Core Driver for NodeJS.
 
 [![Build Status](https://travis-ci.org/vitaly-t/pg-core.svg?branch=master)](https://travis-ci.org/vitaly-t/pg-core)
 
@@ -45,10 +45,10 @@ $ npm run coverage
 
 The original snapshots were taken on November 11, 2015, and included:
 
-* [node-postgres v4.4.3](https://github.com/brianc/node-postgres/tree/v4.4.3)
+* [node-postgres v.4.4.3](https://github.com/brianc/node-postgres/tree/v4.4.3)
 * [pg-query-stream v.0.7.0](https://github.com/brianc/node-pg-query-stream/tree/v0.7.0)
-* [pg-cursor v1.0.0](https://github.com/brianc/node-pg-cursor/tree/v1.0.0)
-* [pg-types v1.10.0](https://github.com/brianc/node-pg-types/tree/v1.10.0)
+* [pg-cursor v.1.0.0](https://github.com/brianc/node-pg-cursor/tree/v1.0.0)
+* [pg-types v.1.10.0](https://github.com/brianc/node-pg-types/tree/v1.10.0)
 
 ### Differences
 
@@ -56,6 +56,7 @@ This library has the following differences from the original package:
 
 * Completely removed - `pg.native`, only javascript implementation is supported;
 * Supported environments: Node JS 0.10 - 5.x, PostgreSQL 9.x
+* The library is being refactored for ES6 compliance
 * All dependencies are kept up-to-date, no use of obsolete packages;
 * All tests were removed initially (see further notes)
 
