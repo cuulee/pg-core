@@ -1,7 +1,7 @@
 {
   "name": "pg-core",
   "version": "0.1.0",
-  "description": "PostgreSQL Core Driver",
+  "description": "PostgreSQL Core Driver for NodeJS",
   "main": "./lib/index.js",
   "scripts": {
     "test": "jasmine-node test",
