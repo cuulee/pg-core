@@ -37,9 +37,9 @@ The original snapshot was taken on November 11, 2015, and included:
 
 This library has the following differences from the original package:
 
-* Completely removed - `pg.native`, only the javascript implementation is supported;
-* All dependencies are up-to-date, no use of obsolete packages;
-* All tests were removed initially (see further)
+* Completely removed - `pg.native`, only javascript implementation is supported;
+* All dependencies are kept up-to-date, no use of obsolete packages;
+* All tests were removed initially (see further notes)
 
 It is important to know that while this assembly didn't keep any of the original
 tests scripts, most of them are covered by the tests provided within [pg-promise](https://github.com/vitaly-t/pg-promise),
