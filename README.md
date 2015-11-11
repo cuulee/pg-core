@@ -23,8 +23,12 @@ var pg = require('pg-core');
 ```
 
 The library exposes the same object as the original `pg`, with the addition of:
+
 * `pg.stream` - instance of the embedded `pg-query-stream` library;
 * `pg.cursor` - instance of the embedded `pg-cursor` library;
+
+and with the exception of:
+* `pg.native` - native `libpq` bindings are not supported.
 
 ### Testing
 
@@ -59,3 +63,7 @@ It is important to know that while this assembly didn't keep any of the original
 tests scripts, most of them are covered by the tests provided within [pg-promise](https://github.com/vitaly-t/pg-promise),
 which is initially used for testing `pg-core`. This is however only the initial approach,
 and new tests will be written and added to this library to assure complete code coverage.
+
+### License
+
+The original license note can be found [here](#license.md).
