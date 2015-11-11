@@ -32,3 +32,16 @@ The original snapshot was taken on November 11, 2015, and included:
 * [pg-query-stream v.0.7.0](https://github.com/brianc/node-pg-query-stream/tree/v0.7.0)
 * [pg-cursor v1.0.0](https://github.com/brianc/node-pg-cursor/tree/v1.0.0)
 * [pg-types v1.10.0](https://github.com/brianc/node-pg-types/tree/v1.10.0)
+
+### differences
+
+This library has the following differences from the original package:
+
+* Completely removed - `pg.native`, only the javascript implementation is supported;
+* All dependencies are up-to-date, no use of obsolete packages;
+* All tests were removed initially (see further)
+
+It is important to know that while this assembly didn't keep any of the original
+tests scripts, most of them are covered by the tests provided within [pg-promise](https://github.com/vitaly-t/pg-promise),
+which is initially used for testing `pg-core`. This is however only the initial approach,
+and new tests will be written and added to this library to assure complete code coverage.

@@ -1,6 +1,6 @@
 {
   "name": "pg-core",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "PostgreSQL Core Driver",
   "main": "./lib/index.js",
   "scripts": {
