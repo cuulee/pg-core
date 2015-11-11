@@ -55,7 +55,7 @@ The original snapshots were taken on November 11, 2015, and included:
 This library has the following differences from the original package:
 
 * Completely removed - `pg.native`, only javascript implementation is supported;
-* Supported environments: Node JS 0.10 - 5.x, PostgreSQL 9.x
+* Supported environments: NodeJS 0.10 - 5.x, PostgreSQL 9.x, Win/Linux/OS-X
 * The library is being refactored for ES6 compliance
 * All dependencies are kept up-to-date, no use of obsolete packages;
 * All tests were removed initially (see further notes)
