@@ -11,13 +11,13 @@ that is self-sufficient and independent of the original work.
 
 The project's goal is improved support with timely updates and bug fixes.
 
-### installing
+### Installing
 
 ```
 $ npm install pg-core
 ```
 
-### using
+### Using
 
 ```javascript
 var pg = require('pg-core');
@@ -27,7 +27,18 @@ The library exposes the same object as the original `pg`, with the addition of:
 * `pg.stream` - instance of the embedded `pg-query-stream` library;
 * `pg.cursor` - instance of the embedded `pg-cursor` library;
 
-### origins
+### Testing
+
+```
+$ npm test
+```
+
+Testing with coverage:
+```
+$ npm run coverage
+```
+
+### Origins
 
 The original snapshot was taken on November 11, 2015, and included:
 
@@ -36,11 +47,12 @@ The original snapshot was taken on November 11, 2015, and included:
 * [pg-cursor v1.0.0](https://github.com/brianc/node-pg-cursor/tree/v1.0.0)
 * [pg-types v1.10.0](https://github.com/brianc/node-pg-types/tree/v1.10.0)
 
-### differences
+### Differences
 
 This library has the following differences from the original package:
 
 * Completely removed - `pg.native`, only javascript implementation is supported;
+* Supported environments: Node JS 0.10, 0.12, 4.x and 5.x
 * All dependencies are kept up-to-date, no use of obsolete packages;
 * All tests were removed initially (see further notes)
 
