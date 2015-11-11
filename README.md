@@ -3,7 +3,6 @@
 PostgreSQL Core Driver.
 
 [![Build Status](https://travis-ci.org/vitaly-t/pg-core.svg?branch=master)](https://travis-ci.org/vitaly-t/pg-core)
-[![Coverage Status](https://coveralls.io/repos/vitaly-t/pg-core/badge.svg?branch=master)](https://coveralls.io/r/vitaly-t/pg-core?branch=master)
 
 Based on work by [Brian Carlson](https://github.com/brianc), it is an integration
 assembly of [node-postgres](https://github.com/brianc/node-postgres) with its core packages
@@ -52,7 +51,7 @@ The original snapshot was taken on November 11, 2015, and included:
 This library has the following differences from the original package:
 
 * Completely removed - `pg.native`, only javascript implementation is supported;
-* Supported environments: Node JS 0.10, 0.12, 4.x and 5.x
+* Supported environments: Node JS 0.10 - 5.x, PostgreSQL 9.x
 * All dependencies are kept up-to-date, no use of obsolete packages;
 * All tests were removed initially (see further notes)
 
