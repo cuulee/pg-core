@@ -43,7 +43,7 @@ $ npm run coverage
 
 ### Origins
 
-The original snapshot was taken on November 11, 2015, and included:
+The original snapshots were taken on November 11, 2015, and included:
 
 * [node-postgres v4.4.3](https://github.com/brianc/node-postgres/tree/v4.4.3)
 * [pg-query-stream v.0.7.0](https://github.com/brianc/node-pg-query-stream/tree/v0.7.0)
@@ -66,4 +66,5 @@ and new tests will be written and added to this library to assure complete code 
 
 ### License
 
-The original license note can be found [here](#license.md).
+The original license note can be found [here](https://github.com/vitaly-t/pg-core/blob/master/license.md).
+
