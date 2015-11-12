@@ -42,6 +42,7 @@
     "pgpass": "0.0.3"
   },
   "devDependencies": {
+    "bluebird": "3.x",
     "coveralls": "2.x",
     "istanbul": "0.4",
     "jasmine-node": "1.x"
