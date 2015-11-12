@@ -58,13 +58,7 @@ This library has the following differences from the original package:
 * Supported environments: NodeJS 0.10 - 5.x, PostgreSQL 9.x, Win/Linux/OS-X
 * The library is being refactored for ES6 compliance
 * All dependencies are kept up-to-date, no use of obsolete packages;
-* All tests were removed initially (see further notes)
-
-It is important to know that while this assembly didn't keep any of the original
-tests, most of them are covered by the tests provided within [pg-promise 3.0](https://github.com/vitaly-t/pg-promise/releases/tag/v.3.0.0),
-which is initially used for testing `pg-core`. This is however only the initial approach,
-and new tests will be written and added to this library to assure complete code coverage.
-YOUR HELP IN THIS IS VERY WELCOME! ;)
+* New tests are being written in place of the old ones. YOUR HELP IS WELCOME! 
 
 ### License
 
