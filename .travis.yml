@@ -8,7 +8,7 @@ before_script:
   - node test/db/init.js
 
 env:
-  - NODE_ENV=production
+  - BLUEBIRD_DEBUG=0
 
 matrix:
   include:
