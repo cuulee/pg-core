@@ -19,7 +19,7 @@ describe("Formatted Queries", function(){
                     done();
                 });
         });
-        it("must return user records", function () {
+        it("must return records", function () {
             expect(result instanceof PGResult).toBe(true);
             expect(result.rows && result.rows.length).toBeTruthy();
         });
