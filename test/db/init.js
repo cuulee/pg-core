@@ -65,7 +65,8 @@ var db = shared.db;
             query("insert into users(login, active) values($1,$2)", ['user-3', false]),
             query("insert into users(login, active) values($1,$2)", ['user-4', false]),
 
-            query("insert into numbers(_smallint, _integer, _bigint, _decimal, _numeric, _real, _dp) values($1,$2,$3,$4,$5,$6,$7)", [1, 2, 3, 4.123, 5.456, 6.07, 7.89])
+            query("insert into numbers(_smallint, _integer, _bigint, _decimal, _numeric, _real, _dp) values($1,$2,$3,$4,$5,$6,$7)", [1, 2, 3, 4.123, 5.456, 6.07, 7.89]),
+            query("insert into numbers(_smallint) values(null)")
         ];
     }
 

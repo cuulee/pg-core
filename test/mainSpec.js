@@ -57,8 +57,7 @@ describe("simple numbers", function () {
             });
     });
     it("must be parsed correctly", function () {
-        expect(rows && rows.length === 1).toBe(true);
-        expect(rows[0]).toEqual({
+        expect(rows).toEqual([{
             _smallint: 1,
             _integer: 2,
             _bigint: '3',
@@ -68,7 +67,17 @@ describe("simple numbers", function () {
             _dp: 7.89,
             _serial: 1,
             _bigserial: '1'
-        });
+        }, {
+            _smallint: null,
+            _integer: null,
+            _bigint: null,
+            _decimal: null,
+            _numeric: null,
+            _real: null,
+            _dp: null,
+            _serial: 2,
+            _bigserial: '2'
+        }]);
     });
 });
 
