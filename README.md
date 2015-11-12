@@ -5,9 +5,8 @@ PostgreSQL Core Driver for NodeJS.
 [![Build Status](https://travis-ci.org/vitaly-t/pg-core.svg?branch=master)](https://travis-ci.org/vitaly-t/pg-core)
 
 Initially based on [node-postgres](https://github.com/brianc/node-postgres) and its core packages,
-this core library for PostgreSQL is self-sufficient and independent of the original work.
-
-The project's goal is improved support with timely updates and bug fixes.
+this core library for PostgreSQL is independent of the original work. It's goal is improved support
+with timely updates and bug fixes.
 
 ### Installing
 
