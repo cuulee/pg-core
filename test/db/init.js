@@ -50,30 +50,33 @@ var db = shared.db;
     }
 
     function populate() {
+        var dt = new Date();
+
         queries = [
-            // drop all the tables, if exist:
-            query("drop table if exists users"),
+
+            // numbers:
             query("drop table if exists numbers"),
-            query("drop table if exists number_arrays"),
-
-            // create all the tables:
             query("create table numbers(_smallint smallint null, _integer integer null, _bigint bigint null, _decimal decimal null, _numeric numeric null, _real real null, _dp double precision null, _serial serial, _bigserial bigserial)"),
-            query("create table number_arrays(_smallint smallint[] null, _integer integer[] null, _bigint bigint[] null, _decimal decimal[] null, _numeric numeric[] null, _real real[] null, _dp double precision[] null);"),
-
-            query("create table users(id serial, login text, active boolean)"),
-
-            // inserting data:
-            query("insert into users(login, active) values($1,$2)", ['user-1', true]),
-            query("insert into users(login, active) values($1,$2)", ['user-2', true]),
-            query("insert into users(login, active) values($1,$2)", ['user-3', false]),
-            query("insert into users(login, active) values($1,$2)", ['user-4', false]),
-
             query("insert into numbers(_smallint, _integer, _bigint, _decimal, _numeric, _real, _dp) values($1,$2,$3,$4,$5,$6,$7)", [1, 2, 3, 4.123, 5.456, 6.07, 7.89]),
             query("insert into numbers(_smallint) values($1)", [null]),
 
+            // number_arrays:
+            query("drop table if exists number_arrays"),
+            query("create table number_arrays(_smallint smallint[] null, _integer integer[] null, _bigint bigint[] null, _decimal decimal[] null, _numeric numeric[] null, _real real[] null, _dp double precision[] null)"),
             query("insert into number_arrays(_smallint, _integer, _bigint, _decimal, _numeric, _real, _dp) values($1,$2,$3,$4,$5,$6,$7)", [[1], [2], [3], [4.123], [5.456], [6.07], [7.89]]),
-            query("insert into number_arrays(_smallint) values($1)", [null])
+            query("insert into number_arrays(_smallint) values($1)", [null]),
 
+            // times:
+            query("drop table if exists times"),
+            query("create table times(_date date null, _time time null, _timestamp timestamp null, _timestamptz timestamptz null)"),
+            query("insert into times(_date, _time, _timestamp, _timestamptz) values($1,current_time,$2,$3)", [dt, dt, dt]),
+            query("insert into times(_date) values($1)", [null]),
+
+            // times_arrays:
+            query("drop table if exists time_arrays"),
+            query("create table time_arrays(_date date[] null, _time time[] null, _timestamp timestamp[] null, _timestamptz timestamptz[] null)"),
+            query("insert into time_arrays(_date, _time, _timestamp, _timestamptz) values($1,array[current_time],$2,$3)", [[dt], [dt], [dt]]),
+            query("insert into time_arrays(_date) values($1)", [null])
         ];
     }
 
