@@ -1,11 +1,29 @@
 language: node_js
-node_js:
-   - "0.10"
-   - "0.12"
-   - "4"
-   - "5"
+
 script:
    npm run travis
-branches:
-  only:
-    - master
+
+before_script:
+  - psql -c 'create database pg_core_test;' -U postgres
+  - node test/db/init.js
+
+addons:
+  postgresql: "9.1"
+  postgresql: "9.2"
+  postgresql: "9.3"
+  postgresql: "9.4"
+
+matrix:
+  include:
+    - node_js: "0.10"
+      addons:
+        postgresql: "9.1"
+    - node_js: "0.12"
+      addons:
+        postgresql: "9.2"
+    - node_js: "4.x"
+      addons:
+        postgresql: "9.3"
+    - node_js: "5.x"
+      addons:
+        postgresql: "9.4"
