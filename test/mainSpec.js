@@ -26,6 +26,23 @@ describe("initial test", function () {
             expect(result.done instanceof Function).toBe(true);
         });
     });
+
+    describe("execute a basic request", function () {
+        var result;
+        beforeEach(function (done) {
+            db.query("select * from users")
+                .then(function (data) {
+                    result = data;
+                })
+                .finally(function () {
+                    done();
+                });
+        });
+        it("must return user records", function () {
+            expect(result instanceof PGResult).toBe(true);
+            expect(result.rows && result.rows.length).toBeTruthy();
+        });
+    });
 });
 
 if (jasmine.Runner) {
