@@ -11,7 +11,7 @@ describe("Formatted Queries", function(){
     describe("basic request", function () {
         var result;
         beforeEach(function (done) {
-            db.query("select * from users")
+            db.query("select * from numbers")
                 .then(function (data) {
                     result = data;
                 })
