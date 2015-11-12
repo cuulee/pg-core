@@ -45,6 +45,33 @@ describe("initial test", function () {
     });
 });
 
+describe("simple numbers", function () {
+    var rows;
+    beforeEach(function (done) {
+        db.query("select * from numbers")
+            .then(function (data) {
+                rows = data.rows;
+            })
+            .finally(function () {
+                done();
+            });
+    });
+    it("must be parsed correctly", function () {
+        expect(rows && rows.length === 1).toBe(true);
+        expect(rows[0]).toEqual({
+            _smallint: 1,
+            _integer: 2,
+            _bigint: '3',
+            _decimal: '4.123',
+            _numeric: '5.456',
+            _real: 6.07,
+            _dp: 7.89,
+            _serial: 1,
+            _bigserial: '1'
+        });
+    });
+});
+
 if (jasmine.Runner) {
     var _finishCallback = jasmine.Runner.prototype.finishCallback;
     jasmine.Runner.prototype.finishCallback = function () {
