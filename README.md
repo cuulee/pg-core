@@ -26,7 +26,7 @@ The library exposes the same object as the original `pg`, with the addition of:
 * `pg.cursor` - instance of the embedded `pg-cursor` library;
 
 and with the exception of:
-* `pg.native` - native `libpq` bindings are not supported.
+* `pg.native` - native `libpq` bindings have been fully removed.
 
 ### Testing
 
