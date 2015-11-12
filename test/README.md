@@ -1,6 +1,6 @@
-# Test Scripts
+# Test Matrix
 
-Below is the active test matrix, as implemented in [travis.yml](/.travis.yml)
+Below is the active test matrix, as implemented in [.travis.yml](/.travis.yml)
 
 Node JS  | PostgreSQL
 :--------: | :----------:

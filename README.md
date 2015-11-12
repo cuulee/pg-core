@@ -38,7 +38,7 @@ Testing with coverage:
 ```
 $ npm run coverage
 ```
-See also the [test matrix](/test).
+See also the [Test Matrix](/test).
 
 ### Origins
 
