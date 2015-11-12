@@ -61,11 +61,10 @@ This library has the following differences from the original package:
 * All tests were removed initially (see further notes)
 
 It is important to know that while this assembly didn't keep any of the original
-tests scripts, most of them are covered by the tests provided within [pg-promise](https://github.com/vitaly-t/pg-promise),
+tests scripts, most of them are covered by the tests provided within [pg-promise 3.0](https://github.com/vitaly-t/pg-promise/releases/tag/v.3.0.0),
 which is initially used for testing `pg-core`. This is however only the initial approach,
 and new tests will be written and added to this library to assure complete code coverage.
 
 ### License
 
 The original license note can be found [here](https://github.com/vitaly-t/pg-core/blob/master/license.md).
-
