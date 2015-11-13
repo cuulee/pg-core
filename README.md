@@ -33,6 +33,8 @@ of documentation that entirely covers functionality of this library.
 
 ### Testing
 
+See [pg-core testing](docs/testing.md).
+
 ```
 $ npm test
 ```
@@ -41,7 +43,7 @@ Testing with coverage:
 ```
 $ npm run coverage
 ```
-See also the [Test Matrix](/test).
+See also the [Test Matrix](test).
 
 ### Origins
 
@@ -64,6 +66,6 @@ The following has been changed from the original [node-postgres] library:
 
 ### License
 
-The original license note can be found [here](/doc/license.md).
+The original license note can be found [here](doc/license.md).
 
 [node-postgres]:https://github.com/brianc/node-postgres
