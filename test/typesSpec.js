@@ -119,7 +119,7 @@ describe("Data Types", function () {
                 });
         });
         it("must be parsed correctly", function () {
-            expect(rows && rows.length === 1).toBe(true);
+            expect(rows && rows.length >= 1).toBe(true);
             // TODO: need more tests here...
         });
     });
@@ -136,7 +136,7 @@ describe("Data Types", function () {
                 });
         });
         it("must be parsed correctly", function () {
-            expect(rows && rows.length === 1).toBe(true);
+            expect(rows && rows.length >= 1).toBe(true);
             // TODO: need more tests here...
         });
     });
