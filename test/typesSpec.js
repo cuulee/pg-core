@@ -143,6 +143,42 @@ describe("Data Types", function () {
 
 });
 
+describe("legacy type tests", function () {
+
+    var getTypeParser = require('../lib/modules/pg-types').getTypeParser;
+    var types = require('./types');
+
+    it("must match expected and actual values", function () {
+        var test = {
+            equal: function (result, expected) {
+                expect(result).toBe(expected);
+            },
+            deepEqual: function (result, expected) {
+                expect(JSON.stringify(result)).toBe(JSON.stringify(expected));
+            },
+            ok: function (value) {
+                expect(value).toBeTruthy();
+            }
+        };
+        Object.keys(types).forEach(function (typeName) {
+            var type = types[typeName];
+            var parser = getTypeParser(type.id, type.format)
+            type.tests.forEach(function (tests) {
+                var result = parser(tests[0]);
+                var expected = tests[1];
+                if (expected instanceof Function) {
+                    expected(test, result);
+                } else {
+                    expect(result).toBe(expected);
+                }
+            });
+        });
+
+    });
+
+});
+
+
 if (jasmine.Runner) {
     var _finishCallback = jasmine.Runner.prototype.finishCallback;
     jasmine.Runner.prototype.finishCallback = function () {
