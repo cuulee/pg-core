@@ -28,8 +28,13 @@ describe("Formatted Queries", function () {
     describe("insert with mixed values", function () {
         var result;
         beforeEach(function (done) {
+            var obj = {
+                toPostgres: function () {
+                    return 123;
+                }
+            };
             db.query("insert into mix(num, bin, txt, bool, _bit, _ts) values($1, $2, $3, $4, $5, $6)",
-                [123, '\x1A2B', 'hello', true, 1, new Date()])
+                [obj, '\x1A2B', 'hello', true, 1, new Date()])
                 .then(function (data) {
                     result = data;
                 })
@@ -47,8 +52,11 @@ describe("Formatted Queries", function () {
         // TODO: bug - passing null within array of binaries breaks the reader;
         var result;
         beforeEach(function (done) {
+            var obj = {
+                text: 'world'
+            };
             db.query("insert into mix_arrays(num, bin, txt, bool, _bit, _ts) values($1, $2, $3, $4, $5, $6)",
-                [[123, 0, null], ['\x1A2B', '\x1C2D'], ['hello', 'world', null], [true, false], [0, 1], [new Date(), null]])
+                [[123, 0, null], ['\x1A2B', '\x1C2D'], ['hello', obj, null], [true, false], [0, 1], [new Date(), null]])
                 .then(function (data) {
                     result = data;
                 })
