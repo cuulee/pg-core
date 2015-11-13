@@ -3,7 +3,17 @@
 var Promise = require('bluebird');
 var core = require('../../lib');
 
-function Database(cn) {
+// Either match your local database configuration according to the details below,
+// or the other way round - change the details to match your local configuration.
+var cn = {
+    host: 'localhost',  // server name or IP address;
+    port: 5432,         // default port;
+    database: 'pg_core_test', // local database name for testing;
+    user: 'postgres'    // user name;
+    // password: - add password, if needed;
+};
+
+function Database() {
     var self = this;
     this.connect = function () {
         return new Promise(function (resolve, reject) {
@@ -49,7 +59,7 @@ function Database(cn) {
 }
 
 module.exports = {
-    db: new Database("postgres://postgres@localhost/pg_core_test"),
+    db: new Database(),
     promise: Promise,
     core: core
 };

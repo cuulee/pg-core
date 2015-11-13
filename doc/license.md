@@ -1,3 +1,5 @@
+Below is the license copy from the original [node-postgres](https://github.com/brianc/node-postgres) project.
+
 ## License
 
 Copyright (c) 2010-2015 Brian Carlson (brian.m.carlson@gmail.com)

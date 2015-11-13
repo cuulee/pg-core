@@ -4,7 +4,7 @@
 
 'use strict';
 
-var shared = require('./index');
+var shared = require('./');
 
 var core = shared.core;
 var Promise = shared.promise;
@@ -13,41 +13,6 @@ var db = shared.db;
 (function () {
 
     var ctx, queries;
-
-    db.connect()
-        .then(function (obj) {
-            ctx = obj;
-            populate();
-            return Promise.all(queries);
-        })
-        .then(function () {
-            console.log("*** SUCCESS ***");
-        })
-        .catch(function (error) {
-            console.log("ERROR:", error);
-        })
-        .finally(function () {
-            if (ctx) {
-                ctx.done();
-                core.end();
-            }
-        });
-
-    function query(text, values) {
-        return new Promise(function (resolve, reject) {
-            try {
-                ctx.client.query(text, values, function (err, result) {
-                    if (err) {
-                        reject(err);
-                    } else {
-                        resolve(result);
-                    }
-                });
-            } catch (e) {
-                reject(e);
-            }
-        });
-    }
 
     function populate() {
         var dt = new Date();
@@ -89,6 +54,41 @@ var db = shared.db;
             query("insert into mix_arrays(bin, txt, bool, _bit) values($1, $2, $3, $4)", [['\x1A2B'], ['hello'], [true], [1]])
 
         ];
+    }
+
+    db.connect()
+        .then(function (obj) {
+            ctx = obj;
+            populate();
+            return Promise.all(queries);
+        })
+        .then(function () {
+            console.log("*** SUCCESS ***");
+        })
+        .catch(function (error) {
+            console.log("ERROR:", error);
+        })
+        .finally(function () {
+            if (ctx) {
+                ctx.done();
+                core.end();
+            }
+        });
+
+    function query(text, values) {
+        return new Promise(function (resolve, reject) {
+            try {
+                ctx.client.query(text, values, function (err, result) {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(result);
+                    }
+                });
+            } catch (e) {
+                reject(e);
+            }
+        });
     }
 
 }());
