@@ -40,9 +40,12 @@ For details on running tests on your local machine see [testing pg-core](doc/tes
 The original snapshots were taken on November 11, 2015, and included:
 
 * [node-postgres v.4.4.3](https://github.com/brianc/node-postgres/tree/v4.4.3)
-* [pg-query-stream v.0.7.0](https://github.com/brianc/node-pg-query-stream/tree/v0.7.0)
-* [pg-cursor v.1.0.0](https://github.com/brianc/node-pg-cursor/tree/v1.0.0)
-* [pg-types v.1.10.0](https://github.com/brianc/node-pg-types/tree/v1.10.0)
+* [pg-query-stream v.0.7.0](https://github.com/brianc/node-pg-query-stream/tree/v0.7.0), exposed as `pg.stream`
+* [pg-cursor v.1.0.0](https://github.com/brianc/node-pg-cursor/tree/v1.0.0), exposed as `pg.cursor`
+* [pg-types v.1.10.0](https://github.com/brianc/node-pg-types/tree/v1.10.0), exposed as `pg.types`
+
+All code changes later committed for original packages are merged into this library.
+For details see the [commit history](doc/commits.md).
 
 ### What's Changed
 
