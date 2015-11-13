@@ -33,7 +33,7 @@ of documentation that entirely covers functionality of this library.
 
 ### Testing
 
-See [pg-core testing](docs/testing.md).
+See [pg-core testing](doc/testing.md).
 
 ```
 $ npm test
