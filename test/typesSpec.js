@@ -85,7 +85,8 @@ describe("Data Types", function () {
                 });
         });
         it("must be parsed correctly", function () {
-            // TODO: needs a test here;
+            expect(rows && rows.length === 1);
+            // TODO: need more tests here...
         });
     });
 
@@ -101,7 +102,25 @@ describe("Data Types", function () {
                 });
         });
         it("must be parsed correctly", function () {
-            // TODO: needs a test here;
+            expect(rows && rows.length === 1);
+            // TODO: need more tests here...
+        });
+    });
+
+    describe("mix", function () {
+        var rows;
+        beforeEach(function (done) {
+            db.query("select * from mix")
+                .then(function (data) {
+                    rows = data.rows;
+                })
+                .finally(function () {
+                    done();
+                });
+        });
+        it("must be parsed correctly", function () {
+            expect(rows && rows.length === 1);
+            // TODO: need more tests here...
         });
     });
 

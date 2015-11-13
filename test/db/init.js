@@ -76,7 +76,12 @@ var db = shared.db;
             query("drop table if exists time_arrays"),
             query("create table time_arrays(_date date[] null, _time time[] null, _timestamp timestamp[] null, _timestamptz timestamptz[] null)"),
             query("insert into time_arrays(_date, _time, _timestamp, _timestamptz) values($1,array[current_time],$2,$3)", [[dt], [dt], [dt]]),
-            query("insert into time_arrays(_date) values($1)", [null])
+            query("insert into time_arrays(_date) values($1)", [null]),
+
+            // mix:
+            query("drop table if exists mix"),
+            query("create table mix(bin bytea null, txt text null, bool boolean null, _bit bit null)"),
+            query("insert into mix(bin, txt, bool, _bit) values($1, $2, $3, $4)", ['\x1A2B', 'hello', true, 1])
         ];
     }
 
