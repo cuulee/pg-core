@@ -33,17 +33,7 @@ of documentation that entirely covers functionality of this library.
 
 ### Testing
 
-See [pg-core testing](doc/testing.md).
-
-```
-$ npm test
-```
-
-Testing with coverage:
-```
-$ npm run coverage
-```
-See also the [Test Matrix](test).
+For all the test details see [testing pg-core](doc/testing.md). 
 
 ### Origins
 

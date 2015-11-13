@@ -1,4 +1,4 @@
-# pg-core tests
+# testing pg-core
 
 Below are the steps for testing `pg-core` on your local machine.
 
