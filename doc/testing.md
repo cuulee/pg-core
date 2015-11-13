@@ -11,7 +11,7 @@ $ npm install
 * Create empty database `pg_core_test`
 * Make sure all tests can connect to your local test database, using the connection details in [test/db/index.js](/test/db/index.js).
   Either set up your test database accordingly or change the connection details in that file. 
-* Initialize the database with some test data:
+* Initialize the database with [some test data](/test/db/init.js):
 ```js
 $ node test/db/init.js
 ``` 
