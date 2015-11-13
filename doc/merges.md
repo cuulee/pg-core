@@ -13,5 +13,5 @@ open a new issue, or better yet - create a PR.
 
 Date  | Source Package | Source Commit(s) | Merged in Version
 :--------: | :----------: | :----------: | :----------:
-13-Oct-15 | node-postgres | [defaults.js: fix typo in comment](https://github.com/brianc/node-postgres/commit/ee210369622bb662e918a979d81866b72a0011ad) | [v.0.1.8](https://github.com/vitaly-t/pg-core/releases/tag/v.0.1.8) 
-13-Oct-15 | pg-query-stream | [avoid race when stream closed while fetching](https://github.com/brianc/node-pg-query-stream/commit/ca21462f1bf8765ff6b16fff8b26842e95fa0e6a) | [v.0.1.9](https://github.com/vitaly-t/pg-core/releases/tag/v.0.1.9) 
+13-Nov-15 | node-postgres | [defaults.js: fix typo in comment](https://github.com/brianc/node-postgres/commit/ee210369622bb662e918a979d81866b72a0011ad) | [v.0.1.8](https://github.com/vitaly-t/pg-core/releases/tag/v.0.1.8) 
+13-Nov-15 | pg-query-stream | [avoid race when stream closed while fetching](https://github.com/brianc/node-pg-query-stream/commit/ca21462f1bf8765ff6b16fff8b26842e95fa0e6a) | [v.0.1.9](https://github.com/vitaly-t/pg-core/releases/tag/v.0.1.9) 
