@@ -85,7 +85,7 @@ describe("Data Types", function () {
                 });
         });
         it("must be parsed correctly", function () {
-            expect(rows && rows.length === 1);
+            expect(rows && rows.length === 2).toBe(true);
             // TODO: need more tests here...
         });
     });
@@ -102,7 +102,7 @@ describe("Data Types", function () {
                 });
         });
         it("must be parsed correctly", function () {
-            expect(rows && rows.length === 1);
+            expect(rows && rows.length === 2).toBe(true);
             // TODO: need more tests here...
         });
     });
@@ -119,7 +119,24 @@ describe("Data Types", function () {
                 });
         });
         it("must be parsed correctly", function () {
-            expect(rows && rows.length === 1);
+            expect(rows && rows.length === 1).toBe(true);
+            // TODO: need more tests here...
+        });
+    });
+
+    describe("mix arrays", function () {
+        var rows;
+        beforeEach(function (done) {
+            db.query("select * from mix_arrays")
+                .then(function (data) {
+                    rows = data.rows;
+                })
+                .finally(function () {
+                    done();
+                });
+        });
+        it("must be parsed correctly", function () {
+            expect(rows && rows.length === 1).toBe(true);
             // TODO: need more tests here...
         });
     });

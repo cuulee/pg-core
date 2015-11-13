@@ -81,7 +81,13 @@ var db = shared.db;
             // mix:
             query("drop table if exists mix"),
             query("create table mix(bin bytea null, txt text null, bool boolean null, _bit bit null)"),
-            query("insert into mix(bin, txt, bool, _bit) values($1, $2, $3, $4)", ['\x1A2B', 'hello', true, 1])
+            query("insert into mix(bin, txt, bool, _bit) values($1, $2, $3, $4)", ['\x1A2B', 'hello', true, 1]),
+
+            // mix_arrays:
+            query("drop table if exists mix_arrays"),
+            query("create table mix_arrays(bin bytea[] null, txt text[] null, bool boolean[] null, _bit bit[] null)"),
+            query("insert into mix_arrays(bin, txt, bool, _bit) values($1, $2, $3, $4)", [['\x1A2B'], ['hello'], [true], [1]])
+
         ];
     }
 
