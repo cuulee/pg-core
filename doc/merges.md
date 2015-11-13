@@ -1,4 +1,4 @@
-# commit history
+# merge history
 
 All of the original code snapshots were taken on November 11, 2015, and included:
 
@@ -7,7 +7,7 @@ All of the original code snapshots were taken on November 11, 2015, and included
 * [pg-cursor v.1.0.0](https://github.com/brianc/node-pg-cursor/tree/v1.0.0)
 * [pg-types v.1.10.0](https://github.com/brianc/node-pg-types/tree/v1.10.0)
 
-Below is the history of synchronizing code changes from that date on into `pg-core`.
+Below is the history of synchronizing code changes from that date on into `pg-core`:
 
 Date  | Source Package | Source Commit(s) | Merged in Version
 :--------: | :----------: | :----------: | :----------:

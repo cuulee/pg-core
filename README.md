@@ -45,7 +45,7 @@ The original snapshots were taken on November 11, 2015, and included:
 * [pg-types v.1.10.0](https://github.com/brianc/node-pg-types/tree/v1.10.0), exposed as `pg.types`
 
 All code changes later committed for original packages are merged into this library.
-For details see the [commit history](doc/commits.md).
+For details see the [merge history](doc/merges.md).
 
 ### What's Changed
 
