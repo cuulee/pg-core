@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 exports['string/varchar'] = {
     format: 'text',
@@ -6,7 +6,7 @@ exports['string/varchar'] = {
     tests: [
         ['bang', 'bang']
     ]
-}
+};
 
 exports['integer/int4'] = {
     format: 'text',
@@ -14,7 +14,7 @@ exports['integer/int4'] = {
     tests: [
         ['2147483647', 2147483647]
     ]
-}
+};
 
 exports['smallint/int2'] = {
     format: 'text',
@@ -22,7 +22,7 @@ exports['smallint/int2'] = {
     tests: [
         ['32767', 32767]
     ]
-}
+};
 
 exports['bigint/int8'] = {
     format: 'text',
@@ -30,7 +30,7 @@ exports['bigint/int8'] = {
     tests: [
         ['9223372036854775807', '9223372036854775807']
     ]
-}
+};
 
 exports.oid = {
     format: 'text',
@@ -38,16 +38,16 @@ exports.oid = {
     tests: [
         ['103', 103]
     ]
-}
+};
 
-var bignum = '31415926535897932384626433832795028841971693993751058.16180339887498948482045868343656381177203091798057628'
+var bignum = '31415926535897932384626433832795028841971693993751058.16180339887498948482045868343656381177203091798057628';
 exports.numeric = {
     format: 'text',
     id: 1700,
     tests: [
         [bignum, bignum]
     ]
-}
+};
 
 exports['real/float4'] = {
     format: 'text',
@@ -55,7 +55,7 @@ exports['real/float4'] = {
     tests: [
         ['123.456', 123.456]
     ]
-}
+};
 
 exports['double precision / float 8'] = {
     format: 'text',
@@ -63,7 +63,7 @@ exports['double precision / float 8'] = {
     tests: [
         ['12345678.12345678', 12345678.12345678]
     ]
-}
+};
 
 exports.boolean = {
     format: 'text',
@@ -73,7 +73,7 @@ exports.boolean = {
         ['f', false],
         [null, null]
     ]
-}
+};
 
 exports.timestamptz = {
     format: 'text',
@@ -96,7 +96,7 @@ exports.timestamptz = {
             dateEquals(2010, 9, 30, 8, 10, 1, 0)
         ]
     ]
-}
+};
 
 exports.timestamp = {
     format: 'text',
@@ -108,22 +108,22 @@ exports.timestamp = {
                 t.equal(
                     value.toUTCString(),
                     new Date(2010, 9, 31, 0, 0, 0, 0, 0).toUTCString()
-                )
+                );
                 t.equal(
                     value.toString(),
                     new Date(2010, 9, 31, 0, 0, 0, 0, 0, 0).toString()
-                )
+                );
             }
         ]
     ]
-}
+};
 
 exports.date = {
     format: 'text',
     id: 1082,
     tests: [
         ['2010-10-31', function (t, value) {
-            var now = new Date(2010, 9, 31)
+            var now = new Date(2010, 9, 31);
             dateEquals(
                 2010,
                 now.getUTCMonth(),
@@ -132,7 +132,7 @@ exports.date = {
             t.equal(value.getHours(), now.getHours())
         }]
     ]
-}
+};
 
 exports.interval = {
     format: 'text',
@@ -154,14 +154,14 @@ exports.interval = {
             t.deepEqual(value, {days: 1, seconds: -3})
         }]
     ]
-}
+};
 
 exports.bytea = {
     format: 'text',
     id: 17,
     tests: [
         ['foo\\000\\200\\\\\\377', function (t, value) {
-            var buffer = new Buffer([102, 111, 111, 0, 128, 92, 255])
+            var buffer = new Buffer([102, 111, 111, 0, 128, 92, 255]);
             t.ok(buffer.equals(value))
         }],
         ['', function (t, value) {
@@ -169,7 +169,7 @@ exports.bytea = {
             t.ok(buffer.equals(value))
         }]
     ]
-}
+};
 
 exports['array/char'] = {
     format: 'text',
@@ -179,7 +179,7 @@ exports['array/char'] = {
             t.deepEqual(value, ['foo', 'bar'])
         }]
     ]
-}
+};
 
 exports['array/varchar'] = {
     format: 'text',
@@ -189,7 +189,7 @@ exports['array/varchar'] = {
             t.deepEqual(value, ['foo', 'bar'])
         }]
     ]
-}
+};
 
 exports['array/text'] = {
     format: 'text',
@@ -199,20 +199,20 @@ exports['array/text'] = {
             t.deepEqual(value, ['foo'])
         }]
     ]
-}
+};
 
 exports['array/bytea'] = {
     format: 'text',
     id: 1001,
     tests: [
         ['{"\\\\x00000000"}', function (t, value) {
-            var buffer = new Buffer('00000000', 'hex')
+            var buffer = new Buffer('00000000', 'hex');
             t.ok(Array.isArray(value))
             t.equal(value.length, 1)
             t.ok(buffer.equals(value[0]))
         }]
     ]
-}
+};
 
 exports['array/numeric'] = {
     format: 'text',
@@ -222,7 +222,7 @@ exports['array/numeric'] = {
             t.deepEqual(value, [1.2, 3.4])
         }]
     ]
-}
+};
 
 exports['array/int2'] = {
     format: 'text',
@@ -232,7 +232,7 @@ exports['array/int2'] = {
             t.deepEqual(value, [-32768, -32767, 32766, 32767])
         }]
     ]
-}
+};
 
 exports['array/int4'] = {
     format: 'text',
@@ -242,7 +242,7 @@ exports['array/int4'] = {
             t.deepEqual(value, [-2147483648, -2147483647, 2147483646, 2147483647])
         }]
     ]
-}
+};
 
 exports['array/int8'] = {
     format: 'text',
@@ -256,11 +256,11 @@ exports['array/int8'] = {
                     '-9223372036854775807',
                     '9223372036854775806',
                     '9223372036854775807'
-                ])
+                ]);
             }
         ]
     ]
-}
+};
 
 exports['array/float4'] = {
     format: 'text',
@@ -270,7 +270,7 @@ exports['array/float4'] = {
             t.deepEqual(value, [1.2, 3.4])
         }]
     ]
-}
+};
 
 exports['array/float8'] = {
     format: 'text',
@@ -280,26 +280,26 @@ exports['array/float8'] = {
             t.deepEqual(value, [-12345678.1234567, 12345678.12345678])
         }]
     ]
-}
+};
 
 exports['array/date'] = {
     format: 'text',
     id: 1182,
     tests: [
         ['{2014-01-01,2015-12-31}', function (t, value) {
-            var expecteds = [new Date(2014, 0, 1), new Date(2015, 11, 31)]
-            t.equal(value.length, 2)
+            var expecteds = [new Date(2014, 0, 1), new Date(2015, 11, 31)];
+            t.equal(value.length, 2);
             value.forEach(function (date, index) {
-                var expected = expecteds[index]
+                var expected = expecteds[index];
                 dateEquals(
                     expected.getUTCFullYear(),
                     expected.getUTCMonth(),
                     expected.getUTCDate(),
                     expected.getUTCHours(), 0, 0, 0)(t, date)
-            })
+            });
         }]
     ]
-}
+};
 
 exports['binary-string/varchar'] = {
     format: 'binary',
@@ -307,7 +307,7 @@ exports['binary-string/varchar'] = {
     tests: [
         ['bang', 'bang']
     ]
-}
+};
 
 exports['binary-integer/int4'] = {
     format: 'binary',
@@ -315,7 +315,7 @@ exports['binary-integer/int4'] = {
     tests: [
         [[0, 0, 0, 100], 100]
     ]
-}
+};
 
 exports['binary-smallint/int2'] = {
     format: 'binary',
@@ -323,7 +323,7 @@ exports['binary-smallint/int2'] = {
     tests: [
         [[0, 101], 101]
     ]
-}
+};
 
 exports['binary-oid'] = {
     format: 'binary',
@@ -331,7 +331,7 @@ exports['binary-oid'] = {
     tests: [
         [[0, 0, 0, 103], 103]
     ]
-}
+};
 
 exports['binary-numeric'] = {
     format: 'binary',
@@ -342,7 +342,7 @@ exports['binary-numeric'] = {
             12.34
         ]
     ]
-}
+};
 
 exports['binary-real/float4'] = {
     format: 'binary',
@@ -350,7 +350,7 @@ exports['binary-real/float4'] = {
     tests: [
         [['0x41', '0x48', '0x00', '0x00'].map(hex), 12.5]
     ]
-}
+};
 
 exports['binary-boolean'] = {
     format: 'binary',
@@ -360,7 +360,7 @@ exports['binary-boolean'] = {
         [[0], false],
         [null, null]
     ]
-}
+};
 
 exports['binary-string'] = {
     format: 'binary',
@@ -371,7 +371,7 @@ exports['binary-string'] = {
             'sladda'
         ]
     ]
-}
+};
 
 exports.point = {
     format: 'text',
@@ -381,7 +381,7 @@ exports.point = {
             t.deepEqual(value, {x: 25.1, y: 50.5})
         }]
     ]
-}
+};
 
 exports.circle = {
     format: 'text',
@@ -391,15 +391,15 @@ exports.circle = {
             t.deepEqual(value, {x: 25, y: 10, radius: 5})
         }]
     ]
-}
+};
 
 function hex(string) {
     return parseInt(string, 16)
 }
 
 function dateEquals() {
-    var timestamp = Date.UTC.apply(Date, arguments)
+    var timestamp = Date.UTC.apply(Date, arguments);
     return function (t, value) {
-        t.equal(value.toUTCString(), new Date(timestamp).toUTCString())
+        t.equal(value.toUTCString(), new Date(timestamp).toUTCString());
     }
 }
