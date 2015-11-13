@@ -64,6 +64,6 @@ The following has been changed from the original [node-postgres] library:
 
 ### License
 
-The original license note can be found [here](https://github.com/vitaly-t/pg-core/blob/master/license.md).
+The original license note can be found [here](/doc/license.md).
 
 [node-postgres]:https://github.com/brianc/node-postgres
