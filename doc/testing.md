@@ -1,4 +1,4 @@
-# testing pg-core
+# Testing `pg-core`
 
 Below are the steps for testing `pg-core` on your local machine.
 
@@ -33,10 +33,10 @@ This generates coverage report: `/coverage/lcov-report/index.html`.
 ## Notes
  
 Please note that the steps provided above rely on the versions of NodeJS and PostgreSQL
-already installed on your machine. 
+already installed on your machine, expecting they are from the list of supported versions. 
 
 When deployed to Travis CI however, the versions of NodeJS and PostgreSQL are used
-according to settings in file [.travis.yml](/.travis.yml). Those are the only versions
+according to the settings in file [.travis.yml](/.travis.yml). Those are the only versions
 supported by this library, and they are currently set as follows:
  
 NodeJS  | PostgreSQL

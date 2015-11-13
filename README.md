@@ -33,7 +33,7 @@ of documentation that entirely covers functionality of this library.
 
 ### Testing
 
-For all the test details see [testing pg-core](doc/testing.md). 
+See [testing pg-core](doc/testing.md) for all details on running tests on your local machine.
 
 ### Origins
 
