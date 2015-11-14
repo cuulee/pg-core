@@ -5,6 +5,7 @@ var Promise = shared.promise;
 var db = shared.db;
 
 describe("Data Types", function () {
+
     describe("numbers", function () {
         var rows;
         beforeEach(function (done) {

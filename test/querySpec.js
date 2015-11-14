@@ -6,6 +6,9 @@ var core = shared.core;
 var Promise = shared.promise;
 var db = shared.db;
 
+function dummy() {
+}
+
 describe("Formatted Queries", function () {
 
     describe("basic request", function () {
@@ -50,6 +53,7 @@ describe("Formatted Queries", function () {
 
     describe("insert with arrays", function () {
         // TODO: bug - passing null within array of binaries breaks the reader;
+        // TODO: see: https://github.com/brianc/node-postgres/issues/886
         var result;
         beforeEach(function (done) {
             var obj = {
@@ -70,6 +74,24 @@ describe("Formatted Queries", function () {
         });
     });
 
+});
+
+describe("Negative queries", function () {
+
+    describe("wrong table name", function () {
+        var result;
+        beforeEach(function (done) {
+            db.query("select * from unknown")
+                .catch(function (error) {
+                    result = error;
+                    done();
+                });
+        });
+        it("must fail correctly", function () {
+            expect(result instanceof Error).toBe(true);
+        });
+    });
+    
 });
 
 if (jasmine.Runner) {
