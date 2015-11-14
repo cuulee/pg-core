@@ -91,7 +91,7 @@ describe("Negative queries", function () {
             expect(result instanceof Error).toBe(true);
         });
     });
-    
+
 });
 
 if (jasmine.Runner) {
