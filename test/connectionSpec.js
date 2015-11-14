@@ -27,6 +27,27 @@ describe("Connection", function () {
         });
     });
 
+    describe("string connection parameters", function () {
+        var result;
+        beforeEach(function (done) {
+            db.connect()
+                .then(function (ctx) {
+                    ctx.client.connectionParameters.getLibpqConnectionString(function (err, data) {
+                        result = data;
+                        done();
+                    });
+                    ctx.done();
+                })
+                .catch(function () {
+                    done();
+                });
+        });
+        it("must be parsed properly", function () {
+            expect(typeof result).toBe('string');
+            expect(result.indexOf('user') >= 0).toBe(true);
+            expect(result.indexOf('host') >= 0).toBe(true);
+        });
+    });
 });
 
 if (jasmine.Runner) {
