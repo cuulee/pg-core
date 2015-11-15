@@ -41,6 +41,7 @@ The original snapshots were taken on November 11, 2015, and included:
 
 * [node-postgres v.4.4.3](https://github.com/brianc/node-postgres/tree/v4.4.3)
 * [pg-query-stream v.0.7.0](https://github.com/brianc/node-pg-query-stream/tree/v0.7.0), exposed as `pg.stream`
+* [pg-copy-streams v.0.3.0](https://github.com/brianc/node-pg-copy-streams/tree/v0.3.0), exposed as `pg.copy`
 * [pg-cursor v.1.0.0](https://github.com/brianc/node-pg-cursor/tree/v1.0.0), exposed as `pg.cursor`
 * [pg-types v.1.10.0](https://github.com/brianc/node-pg-types/tree/v1.10.0), exposed as `pg.types`
 
