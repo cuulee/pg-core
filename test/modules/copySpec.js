@@ -1,54 +1,52 @@
-var shared = require('./db');
+var shared = require('../db');
 
 var core = shared.core;
 var Promise = shared.promise;
 var db = shared.db;
 
-var QueryStream = core.stream;
+var copy = core.copy;
 
 function dummy() {
 }
 
-describe("Stream", function () {
+describe("Copy", function () {
 
-    describe("with valid query", function () {
-        var rows = [];
+    describe("to stdout", function () {
+        var success;
         beforeEach(function (done) {
             var ctx;
             db.connect()
                 .then(function (obj) {
                     ctx = obj;
-                    return ctx.client.query(new QueryStream("select * from numbers"));
+                    return ctx.client.query(copy.to('COPY numbers TO STDOUT'));
                 })
                 .then(function (stream) {
                     return new Promise(function (resolve, reject) {
-                        var result = [];
-                        stream.on('data', process);
                         stream.once('end', function () {
-                            stream.removeListener('data', process);
-                            resolve(result);
+                            resolve();
                         });
-                        stream.once('error', function (err) {
-                            reject(err);
+                        stream.once('error', function (error) {
+                            reject(error);
                         });
-                        function process(data) {
-                            result.push(data);
-                        }
+                        stream.once('data', function () {
+                            // ignore the data;
+                        });
                     });
                 })
-                .then(function (data) {
-                    rows = data;
+                .then(function () {
+                    success = true;
                 }, dummy)
                 .finally(function () {
                     if (ctx) {
-                        ctx.done();
+                        // TODO: test below breaks the connection pool, and thus all other tests;
+                        // TODO: That's why we have to release the connection entirely;
+                        ctx.client.end();
                     }
                     done();
                 });
         });
-        it("must be parsed correctly", function () {
-            expect(rows && rows.length === 2).toBe(true);
-            // TODO: need more tests here...
+        it("must end successfully", function () {
+            expect(success).toBe(true);
         });
     });
 

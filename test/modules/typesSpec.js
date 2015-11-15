@@ -1,4 +1,4 @@
-var shared = require('./db');
+var shared = require('../db');
 
 var core = shared.core;
 var Promise = shared.promise;
@@ -146,7 +146,7 @@ describe("Data Types", function () {
 
 describe("legacy type tests", function () {
 
-    var getTypeParser = require('../lib/modules/pg-types').getTypeParser;
+    var getTypeParser = require('../../lib/modules/pg-types').getTypeParser;
     var types = require('./types');
 
     var test = {

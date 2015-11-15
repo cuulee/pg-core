@@ -1,6 +1,5 @@
-var shared = require('./db');
-
-var PGResult = require('../lib/result');
+var shared = require('../db');
+var PGResult = require('../../lib/result');
 
 var core = shared.core;
 var Promise = shared.promise;
