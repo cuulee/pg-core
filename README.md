@@ -23,6 +23,7 @@ var pg = require('pg-core');
 The library exposes the same object as the original `pg`, with the addition of:
 
 * `pg.stream` - instance of the embedded [pg-query-stream] library;
+* `pg.copy` - instance of the embedded [pg-copy-streams] library;
 * `pg.cursor` - instance of the embedded [pg-cursor] library;
 
 and with the exception of:
@@ -64,4 +65,5 @@ The original license note can be found [here](doc/license.md).
 
 [node-postgres]:https://github.com/brianc/node-postgres
 [pg-query-stream]:https://github.com/brianc/node-pg-query-stream
+[pg-copy-streams]:https://github.com/brianc/node-pg-copy-streams
 [pg-cursor]:https://github.com/brianc/node-pg-cursor
